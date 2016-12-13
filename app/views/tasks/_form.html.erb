@@ -1,0 +1,37 @@
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :recurence %>
+    <%= f.number_field :recurence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precision %>
+    <%= f.text_field :precision %>
+  </div>
+
+  <div class="field">
+    <%= f.label :job_type %>
+    <%= f.text_field :job_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :command %>
+    <%= f.text_field :command %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

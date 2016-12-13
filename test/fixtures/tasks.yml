@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recurence: 1
+  precision: MyString
+  job_type: MyString
+  command: MyString
+  state: MyString
+
+two:
+  recurence: 1
+  precision: MyString
+  job_type: MyString
+  command: MyString
+  state: MyString

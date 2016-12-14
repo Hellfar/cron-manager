@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213173830) do
+ActiveRecord::Schema.define(version: 20161214145522) do
+
+  create_table "job_types", force: :cascade do |t|
+    t.string   "task"
+    t.string   "template"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "recurence",  default: 1
@@ -20,6 +27,13 @@ ActiveRecord::Schema.define(version: 20161213173830) do
     t.string   "state",      default: "created", null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+  end
+
+  create_table "variables", force: :cascade do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

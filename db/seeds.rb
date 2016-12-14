@@ -2,6 +2,12 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
+possible_char = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map{|i|i.to_a}.flatten
+random_identifier = (0...30).map{possible_char[rand(possible_char.length)]}.join
+
+# This identifier will associate this database to the crontab part
+Variable.create name: "identifier", value: random_identifier
+
 # Environment variable defaults to RAILS_ENV
 Variable.create name: "environment_variable", value: "RAILS_ENV"
 # Environment defaults to production
